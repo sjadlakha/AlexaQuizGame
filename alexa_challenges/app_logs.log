@@ -100,3 +100,46 @@ INFO:2020-10-11 00:02:50,502:logger:user is ready or not: yes
 INFO:2020-10-11 00:02:52,705:logger:['How many calories are in a 355 ml can of Pepsi Cola? A. 200, B. 100, C. 150, D.155', 'De Eemhof, Port Zelande and Het Heijderbos are holiday villas owned by what company? A. Yelloh Village, B. Center Parcs, C. Keycamp, D.Villa Plus', 'The Canadian $1 coin is colloquially known as a what? A. Loonie, B. Boolie, C. Foolie, D.Moodie', 'Which of the following is not the host of a program on NPR? A. Terry Gross, B. Ben Shapiro, C. Ira Glass, D.Peter Sagal', 'The architect known as Le Corbusier was an important figure in what style of architecture? A. Neoclassical, B. Modernism, C. Baroque, D.Gothic Revival']
 INFO:2020-10-11 00:02:52,705:logger:1
 INFO:2020-10-11 00:02:52,705:logger:How many calories are in a 355 ml can of Pepsi Cola? A. 200, B. 100, C. 150, D.155
+INFO:2020-10-11 12:35:49,181:logger:********* IN LAUNCH INTENT *************
+INFO:2020-10-11 12:35:49,182:logger:Welcome to the quiz. Game is started
+INFO:2020-10-11 12:35:49,182:logger:<speak><audio src='soundbank://soundlibrary/musical/amzn_sfx_drum_and_cymbal_02'/>Welcome to the QUIZ, You are going to face many challenging questions of         various categories. First tell me which category would you like to choose? choose category from Entertainment, Science,         Mythology, Sports, Geography, History, Politics, Art, Celebrities, Animals, and Vehicles.</speak>
+INFO:2020-10-11 12:36:29,348:logger:********* IN CATEGORY INTENT *************
+INFO:2020-10-11 12:36:29,348:logger:category name: sports
+INFO:2020-10-11 12:36:46,779:logger:********* IN PLAYER COUNT INTENT *************
+INFO:2020-10-11 12:36:46,779:logger:players count: 2
+INFO:2020-10-11 12:37:09,920:logger:********* IN PLAYER NAME INTENT *************
+INFO:2020-10-11 12:37:09,920:logger:{'type': 'IntentRequest', 'requestId': 'amzn1.echo-api.request.1b07ff8f-b0df-4c36-b536-1329b66dee4d', 'locale': 'en-IN', 'timestamp': '2020-10-11T07:07:08Z', 'intent': {'name': 'PlayersNameIntent', 'confirmationStatus': 'NONE', 'slots': {'name': {'name': 'name', 'value': 'sage', 'confirmationStatus': 'NONE', 'source': 'USER', 'slotValue': {'type': 'Simple', 'value': 'sage'}}, 'number': {'name': 'number', 'confirmationStatus': 'NONE'}}}, 'dialogState': 'STARTED'}
+INFO:2020-10-11 12:37:09,920:logger:players name: sage
+INFO:2020-10-11 12:37:25,790:logger:********* IN PLAYER NAME INTENT *************
+INFO:2020-10-11 12:37:25,790:logger:{'type': 'IntentRequest', 'requestId': 'amzn1.echo-api.request.7d4e6b65-586f-464f-abc9-a66074b05080', 'locale': 'en-IN', 'timestamp': '2020-10-11T07:07:23Z', 'intent': {'name': 'PlayersNameIntent', 'confirmationStatus': 'NONE', 'slots': {'name': {'name': 'name', 'value': 'John', 'confirmationStatus': 'NONE', 'source': 'USER', 'slotValue': {'type': 'Simple', 'value': 'John'}}, 'number': {'name': 'number', 'confirmationStatus': 'NONE'}}}, 'dialogState': 'STARTED'}
+INFO:2020-10-11 12:37:25,790:logger:players name: John
+INFO:2020-10-11 12:37:40,022:logger:********* IN QUIZ BEGIN INTENT *************
+INFO:2020-10-11 12:37:40,022:logger:{'type': 'IntentRequest', 'requestId': 'amzn1.echo-api.request.4903d252-0718-449a-b7f6-d6cd2416b0d2', 'locale': 'en-IN', 'timestamp': '2020-10-11T07:07:38Z', 'intent': {'name': 'QuizBeginIntent', 'confirmationStatus': 'NONE', 'slots': {'ready_or_not': {'name': 'ready_or_not', 'value': 'yes', 'resolutions': {'resolutionsPerAuthority': [{'authority': 'amzn1.er-authority.echo-sdk.amzn1.ask.skill.6fe2df4b-f525-4418-b873-82d8c4824da9.ready_or_not', 'status': {'code': 'ER_SUCCESS_MATCH'}, 'values': [{'value': {'name': 'yes', 'id': 'a6105c0a611b41b08f1209506350279e'}}, {'value': {'name': 'yes I am ready', 'id': '0a4216d7da871614f325deea5a657cb3'}}]}]}, 'confirmationStatus': 'NONE', 'source': 'USER', 'slotValue': {'type': 'Simple', 'value': 'yes', 'resolutions': {'resolutionsPerAuthority': [{'authority': 'amzn1.er-authority.echo-sdk.amzn1.ask.skill.6fe2df4b-f525-4418-b873-82d8c4824da9.ready_or_not', 'status': {'code': 'ER_SUCCESS_MATCH'}, 'values': [{'value': {'name': 'yes', 'id': 'a6105c0a611b41b08f1209506350279e'}}, {'value': {'name': 'yes I am ready', 'id': '0a4216d7da871614f325deea5a657cb3'}}]}]}}}}}, 'dialogState': 'STARTED'}
+INFO:2020-10-11 12:37:40,023:logger:user is ready or not: yes
+ERROR:2020-10-11 12:37:40,023:logger:''
+Traceback (most recent call last):
+  File "/Users/sahajadlakha/Documents/DEV_ZONE/Alexaquiz-master/alexa_challenges/challenges.py", line 97, in quiz_beginning
+    quiz_data = middleware(player_num*5, category_name)
+  File "/Users/sahajadlakha/Documents/DEV_ZONE/Alexaquiz-master/alexa_challenges/data.py", line 20, in middleware
+    ques=question_amount, category=CATEGORY[category])
+KeyError: ''
+INFO:2020-10-11 12:38:00,034:logger:********* IN QUIZ BEGIN INTENT *************
+INFO:2020-10-11 12:38:00,034:logger:{'type': 'IntentRequest', 'requestId': 'amzn1.echo-api.request.7336454e-2353-4250-8002-af0a8180519d', 'locale': 'en-IN', 'timestamp': '2020-10-11T07:07:58Z', 'intent': {'name': 'QuizBeginIntent', 'confirmationStatus': 'NONE', 'slots': {'ready_or_not': {'name': 'ready_or_not', 'value': 'yes I am ready', 'resolutions': {'resolutionsPerAuthority': [{'authority': 'amzn1.er-authority.echo-sdk.amzn1.ask.skill.6fe2df4b-f525-4418-b873-82d8c4824da9.ready_or_not', 'status': {'code': 'ER_SUCCESS_MATCH'}, 'values': [{'value': {'name': 'yes I am ready', 'id': '0a4216d7da871614f325deea5a657cb3'}}]}]}, 'confirmationStatus': 'NONE', 'source': 'USER', 'slotValue': {'type': 'Simple', 'value': 'yes I am ready', 'resolutions': {'resolutionsPerAuthority': [{'authority': 'amzn1.er-authority.echo-sdk.amzn1.ask.skill.6fe2df4b-f525-4418-b873-82d8c4824da9.ready_or_not', 'status': {'code': 'ER_SUCCESS_MATCH'}, 'values': [{'value': {'name': 'yes I am ready', 'id': '0a4216d7da871614f325deea5a657cb3'}}]}]}}}}}, 'dialogState': 'STARTED'}
+INFO:2020-10-11 12:38:00,034:logger:user is ready or not: yes I am ready
+ERROR:2020-10-11 12:38:00,034:logger:''
+Traceback (most recent call last):
+  File "/Users/sahajadlakha/Documents/DEV_ZONE/Alexaquiz-master/alexa_challenges/challenges.py", line 97, in quiz_beginning
+    quiz_data = middleware(player_num*5, category_name)
+  File "/Users/sahajadlakha/Documents/DEV_ZONE/Alexaquiz-master/alexa_challenges/data.py", line 20, in middleware
+    ques=question_amount, category=CATEGORY[category])
+KeyError: ''
+INFO:2020-10-11 12:42:00,124:logger:********* IN QUIZ BEGIN INTENT *************
+INFO:2020-10-11 12:42:00,125:logger:{'type': 'IntentRequest', 'requestId': 'amzn1.echo-api.request.15dd1c3a-8162-4611-abac-ff3bf34905ea', 'locale': 'en-IN', 'timestamp': '2020-10-11T07:11:57Z', 'intent': {'name': 'QuizBeginIntent', 'confirmationStatus': 'NONE', 'slots': {'ready_or_not': {'name': 'ready_or_not', 'value': 'I am ready', 'resolutions': {'resolutionsPerAuthority': [{'authority': 'amzn1.er-authority.echo-sdk.amzn1.ask.skill.6fe2df4b-f525-4418-b873-82d8c4824da9.ready_or_not', 'status': {'code': 'ER_SUCCESS_MATCH'}, 'values': [{'value': {'name': 'I am ready', 'id': '60112074bdbb8840bd6117cb8c6c2e69'}}, {'value': {'name': 'yes I am ready', 'id': '0a4216d7da871614f325deea5a657cb3'}}, {'value': {'name': 'I am always ready', 'id': 'a09d41df9cff1a5bef21029bdb8b83af'}}]}]}, 'confirmationStatus': 'NONE', 'source': 'USER', 'slotValue': {'type': 'Simple', 'value': 'I am ready', 'resolutions': {'resolutionsPerAuthority': [{'authority': 'amzn1.er-authority.echo-sdk.amzn1.ask.skill.6fe2df4b-f525-4418-b873-82d8c4824da9.ready_or_not', 'status': {'code': 'ER_SUCCESS_MATCH'}, 'values': [{'value': {'name': 'I am ready', 'id': '60112074bdbb8840bd6117cb8c6c2e69'}}, {'value': {'name': 'yes I am ready', 'id': '0a4216d7da871614f325deea5a657cb3'}}, {'value': {'name': 'I am always ready', 'id': 'a09d41df9cff1a5bef21029bdb8b83af'}}]}]}}}}}, 'dialogState': 'STARTED'}
+INFO:2020-10-11 12:42:00,125:logger:user is ready or not: I am ready
+ERROR:2020-10-11 12:42:00,126:logger:''
+Traceback (most recent call last):
+  File "/Users/sahajadlakha/Documents/DEV_ZONE/Alexaquiz-master/alexa_challenges/challenges.py", line 97, in quiz_beginning
+    quiz_data = middleware(player_num*5, category_name)
+  File "/Users/sahajadlakha/Documents/DEV_ZONE/Alexaquiz-master/alexa_challenges/data.py", line 20, in middleware
+    ques=question_amount, category=CATEGORY[category])
+KeyError: ''

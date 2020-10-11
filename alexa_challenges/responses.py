@@ -14,13 +14,12 @@ RESPONSE = {
     'GET_MULTI_PLAYER_MSG': 'okay player {number} is {name}. Tell me the name of next player.',
     'GET_LAST_PLAYER_MSG': 'player {number} is {name}. okay All set. Are you ready \
                 for the Quiz?',
-    'HELP_MSG': 'In this quiz game you first need to specify how many players are going to play \
+    'HELP_MSG': 'In this quiz game you first need to specify the category you eant to play \
+        then give the number of players who will play \
         then give their names one by one after that alexa will ask you questions one by one \
         also verify your answers and give you scores accordingly. you can give answer like, I \
-        think or I guess or i will go with then choose approprirate option. You can choose \
-        particular category by saying ask me question regarding and then choose any category from \
-        Entertainment, Science, Mythology, Sports, Geography, History, Politics, Art, Celebrities, \
-        Animals, and Vehicles. you can also continue quiz after 5 question if you wanna play \
+        think or I guess or i will go with then choose approprirate option. \
+             you can also continue quiz after 5 question if you wanna play \
         further.',
     'HINT_ANSWER_PATTERN': 'You have to give answer like, I think option or I guess option or \
         I will go with option and then give appropriate option. I hope this will help you.',

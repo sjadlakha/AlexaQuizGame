@@ -93,7 +93,7 @@ def quiz_beginning(ready_or_not):
         if quiz_instance.track_players_name():
             return question(quiz_instance.track_players_name())
         info_logger('user is ready or not: '+ready_or_not)
-        players = int(session.attributes['total_players'])
+        # players = int(session.attributes['total_players'])
         quiz_data = middleware(player_num*5, category_name)
         session.attributes['quiz_data'] = quiz_data
         session.attributes['counter'] = 0
