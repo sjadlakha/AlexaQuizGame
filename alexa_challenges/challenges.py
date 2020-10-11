@@ -37,10 +37,16 @@ def select_category(category):
     try:
         info_logger('********* IN CATEGORY INTENT *************')
         info_logger('category name: '+category)
+        
+
         if category.lower() not in CATEGORY.keys():
             speech_text = RESPONSE['INVALID_CATEGORY']
         else:
             category_name = category
+            session.attributes['category_selected'] = CATEGORY[category]
+
+            info_logger('category_name var value: '+category_name)
+
             speech_text = RESPONSE['GET_PLAYER_COUNT']
 
     except Exception as e:
@@ -55,6 +61,9 @@ def count_players(players_count):
         info_logger('********* IN PLAYER COUNT INTENT *************')
         info_logger('players count: {}'.format(players_count))
         player_num = players_count
+
+        info_logger('player_num variable value: {}'.format(player_num))
+        session.attributes['total_players'] = players_count
         quiz_instance = Quiz(session.attributes)
         speech_text = quiz_instance.count_players_responses(int(players_count))
     except Exception as e:
@@ -89,12 +98,16 @@ def quiz_beginning(ready_or_not):
     try:
         info_logger('********* IN QUIZ BEGIN INTENT *************')
         info_logger(request)
+
+        info_logger('player_num : {} and category_name: {}'.format(player_num, category_name))
+        print(category_name, player_num)
         quiz_instance = Quiz(session.attributes)
         if quiz_instance.track_players_name():
             return question(quiz_instance.track_players_name())
         info_logger('user is ready or not: '+ready_or_not)
-        # players = int(session.attributes['total_players'])
-        quiz_data = middleware(player_num*5, category_name)
+        players = int(session.attributes['total_players'])
+        category_selected = int(session.attributes['category_selected'])
+        quiz_data = middleware(players*5, category_selected)
         session.attributes['quiz_data'] = quiz_data
         session.attributes['counter'] = 0
         speech_text = quiz_instance.initial_quiz_que()
