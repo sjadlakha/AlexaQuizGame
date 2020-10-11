@@ -1,0 +1,123 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "History",
+            "type": "boolean",
+            "difficulty": "hard",
+            "question": "Joseph Stalin&#039;s real name was Ioseb Bessarionis dze Dzugashvili.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "boolean",
+            "difficulty": "easy",
+            "question": "The main playable character of the 2015 RPG &quot;Undertale&quot; is a monster.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "How many total monsters appear in Monster Hunter Generations?",
+            "correct_answer": "105",
+            "incorrect_answers": [
+                "100",
+                "98",
+                "73"
+            ]
+        },
+        {
+            "category": "Entertainment: Japanese Anime & Manga",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In &quot;A Certain Scientific Railgun&quot;, how many &quot;sisters&quot; did Accelerator have to kill to achieve the rumored level 6?",
+            "correct_answer": "20,000",
+            "incorrect_answers": [
+                "128",
+                "10,000",
+                "5,000"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "In Riot Games &quot;League of Legends&quot; the name of Halloween event is called &quot;The Reckoning&quot;.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which of these is NOT a song by Pegboard Nerds?",
+            "correct_answer": "WiFi Tears",
+            "incorrect_answers": [
+                "Swamp Thing",
+                "Emoji",
+                "BAMF"
+            ]
+        },
+        {
+            "category": "History",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In which years did the Battle of Gallipoli take place?",
+            "correct_answer": "1915 - 1916",
+            "incorrect_answers": [
+                "1914 - 1918",
+                "1914 - 1915",
+                "1915 - 1918"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the name of the first level in &quot;Call of Duty: World at War&quot;?",
+            "correct_answer": "Semper Fi",
+            "incorrect_answers": [
+                "Ring of Steel",
+                "Vendetta",
+                "Eviction"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In which year was League of Legends released?",
+            "correct_answer": "2009",
+            "incorrect_answers": [
+                "2010",
+                "2003",
+                "2001"
+            ]
+        },
+        {
+            "category": "Art",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Who painted The Starry Night?",
+            "correct_answer": "Vincent van Gogh",
+            "incorrect_answers": [
+                "Pablo Picasso",
+                "Leonardo da Vinci",
+                "Michelangelo"
+            ]
+        }
+    ]
+}
+
+// Is there any free API for multiple choice questions in which we can select categories of competitive exams?
+
+// I am building Alexa skill in which I need question answer API which gives me lots of questions with multiple choices and with their correct answers in JSON format and if an explanation is available of correct answers then it would be great. Competitive exams question answer must be needed. I found apis like https://opentdb.com/api_config.php and http://jservice.io/ but these apis not satisfied my requirements. So if anyone knows any other apis regarding the question and answers then please mention those apis here.

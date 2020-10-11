@@ -1,0 +1,328 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "quiz game",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "guide me",
+                        "Help me"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "no",
+                        "exit",
+                        "terminate",
+                        "stop",
+                        "okay",
+                        "Thank you"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "QuizBeginIntent",
+                    "slots": [
+                        {
+                            "name": "ready_or_not",
+                            "type": "ready_or_not"
+                        }
+                    ],
+                    "samples": [
+                        "{ready_or_not}",
+                        "start game",
+                        "{ready_or_not}  ask me anything ",
+                        "{ready_or_not}  Let's play",
+                        "{ready_or_not}  Start Quiz"
+                    ]
+                },
+                {
+                    "name": "QuestionAnswerIntent",
+                    "slots": [
+                        {
+                            "name": "answer",
+                            "type": "answers"
+                        }
+                    ],
+                    "samples": [
+                        "answer is {answer}",
+                        "maybe option {answer}",
+                        "i think option {answer}",
+                        "i will go with option {answer}",
+                        "{answer}",
+                        "I guess option {answer}",
+                        "i hope option {answer}",
+                        "{answer} maybe",
+                        "{answer} i think",
+                        "okay i think answer is {answer}",
+                        "hmm {answer}",
+                        "umm {answer}",
+                        "i hope {answer}",
+                        "I guess {answer}",
+                        "{answer} i guess",
+                        "answer would be {answer}",
+                        "maybe {answer}",
+                        "I think {answer}",
+                        "My answer is {answer}",
+                        "I will go with {answer}"
+                    ]
+                },
+                {
+                    "name": "RepeatQuestionIntent",
+                    "slots": [],
+                    "samples": [
+                        "can you repeat",
+                        "tell me question one more time",
+                        "sorry I forgot the question",
+                        "can you say that again",
+                        "sorry what was the question",
+                        "can you please repeat the question",
+                        "repeat question"
+                    ]
+                },
+                {
+                    "name": "PlayerCountIntent",
+                    "slots": [
+                        {
+                            "name": "players_count",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{players_count}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{players_count} players are going to play",
+                        "{players_count}",
+                        "{players_count} players"
+                    ]
+                },
+                {
+                    "name": "PlayersNameIntent",
+                    "slots": [
+                        {
+                            "name": "name",
+                            "type": "AMAZON.FirstName"
+                        },
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "player {number} is {name}",
+                        "Hi I am {name}",
+                        "{name} here",
+                        "I am {name}",
+                        "my name is {name}"
+                    ]
+                },
+                {
+                    "name": "CategoryNameIntent",
+                    "slots": [
+                        {
+                            "name": "category",
+                            "type": "category"
+                        }
+                    ],
+                    "samples": [
+                        "i want to play {category} quiz",
+                        "I will go with {category}",
+                        "{category}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "answers",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "D"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "B"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ready_or_not",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "yup"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yeah"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I am always ready"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I am ready"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yes I am ready"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "category",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "vehicles"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "animals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "celebrities"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "art"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "politics"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "history"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "geography"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sports"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mythology"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "science"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "entertainment"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "general knowledge"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "PlayerCountIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "players_count",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.459643469540.498191940859"
+                            }
+                        }
+                    ]
+                }
+                // {
+                //     "name": "CategoryNameIntentent",
+                //     "confirmationRequired": false,
+                //     "prompts": {},
+                //     "slots": [
+                //         {
+                //             "name": "category",
+                //             "type": "category",
+                //             "confirmationRequired": false,
+                //             "elicitationRequired": false,
+                //             "prompts": {}
+                //         }
+                //     ]
+                // }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.459643469540.498191940859",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "how many players are going to play?"
+                    }
+                ]
+            }
+        ]
+    }
+}
