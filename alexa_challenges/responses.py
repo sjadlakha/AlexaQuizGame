@@ -15,6 +15,7 @@ RESPONSE = {
     'GET_LAST_PLAYER_MSG': 'player {number} is {name}. okay All set. Are you ready \
                 for the Quiz?',
     'HELP_MSG': 'In this quiz game you first need to specify the category you eant to play \
+        then select a difficulty level \
         then give the number of players who will play \
         then give their names one by one after that alexa will ask you questions one by one \
         also verify your answers and give you scores accordingly. you can give answer like, I \
@@ -34,7 +35,15 @@ RESPONSE = {
     'PLAYERS_OUT_OF_RANGE': 'maximum five players are allowed at a time. so you need to choose \
         players between one to five.',
     'PLAYBACK_SPEED': 'okay I have set my playback speed {speed}',
-    'SINGLE_WIN_MSG': 'Congrats {name}, you final score is {score} points. You play very well. \
+    'SINGLE_WIN_MSG1': 'Hey {name}, you final score is {score} points. Nice try, \
+        But you need some improvement in this category. Would you like to continue?',
+    'SINGLE_WIN_MSG2': 'Congrats {name}, you final score is {score} points. You need to work in the field of {category}. \
+        Would you like to continue?',
+    'SINGLE_WIN_MSG3': 'Congrats {name}, you final score is {score} points. You are above average but it can be fun learning about {category}. \
+        Would you like to continue?',
+    'SINGLE_WIN_MSG4': 'Congrats {name}, you final score is {score} points. Sounds like you have some knowledge about {category}. \
+        Would you like to continue?',
+    'SINGLE_WIN_MSG5': 'Congrats {name}, you final score is {score} points. Perfect Score. You seem to be a master of {category}. \
         Would you like to continue?',
     'STOP_MSG': 'Okay see you soon.',
     'TRACK_PLAYERS_COUNT': 'First Tell me how many players are going to play?',
@@ -45,6 +54,12 @@ RESPONSE = {
         various categories. First tell me which category would you like to choose? choose category from Entertainment, Science, \
         Mythology, Sports, Geography, History, Politics, Art, Celebrities, Animals, and Vehicles.',
     'WRONG_ANS_MSG': 'oops! sorry you are wrong this time. The correct answer is {ans}. ',
-    'GET_PLAYER_COUNT':'Got it. Now please tell me how many players will play?'
-
+    'GET_PLAYER_COUNT':'Got it. Now please tell me how many players will play?',
+    'INVALID_DIFFICULTY': 'Sorry, I did not get you. Please select difficulty level out of, easy, medium and hard.',
+    'GET_DIFFICULTY_LEVEL': 'Understood .How tough do you want the questions to be? \
+        You may choose out of the options\
+        easy \
+        medium \
+        hard. \
+        You should give your response like I will go with difficulty level ,or difficulty level , or set difficulty level to ,or I will go with and then give the difficulty level'
 }

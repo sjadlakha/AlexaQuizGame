@@ -13,11 +13,11 @@ import requests
 import random
 import pdb
 # from constants import CATEGORY
-def middleware(question_amount, category):
+def middleware(question_amount, category, diff):
     # pdb.set_trace()
 
-    url = "https://opentdb.com/api.php?amount={ques}&category={category}&type=multiple".format(
-        ques=question_amount, category=category)
+    url = "https://opentdb.com/api.php?amount={ques}&category={category}&difficulty={diff}&type=multiple".format(
+        ques=question_amount, category=category, diff=diff)
 
     print('question middleware is called')
     data = requests.get(url).json()

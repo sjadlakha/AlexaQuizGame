@@ -1,51 +1,66 @@
-import logging
-import os
-import random
-import pdb
-
 from responses import RESPONSE
 from flask import Flask
 from flask_ask import Ask, request, session, question, statement, audio, current_stream
 from data import middleware
 from utils import Quiz, info_logger, error_logger
-from constants import CATEGORY, SOUNDS
+from constants import CATEGORY, SOUNDS, DIFFICULTY
 
 app = Flask(__name__)
 ask = Ask(app, "/")
-category_name=''
-player_num=0
+category_name = ''
+player_num = 0
+
 
 @ask.launch
 def launch():
     info_logger('********* IN LAUNCH INTENT *************')
     info_logger('Welcome to the quiz. Game is started')
     session.attributes['playback_speed'] = 'slow'
-    speech_text = '<speak>' + Quiz.response_with_music(SOUNDS['welcome'], RESPONSE['WELCOME_MSG'])+\
+    speech_text = '<speak>' + Quiz.response_with_music(SOUNDS['welcome'], RESPONSE['WELCOME_MSG']) +\
         '</speak>'
     info_logger(speech_text)
     return question(speech_text).reprompt(speech_text).simple_card('QUIZ', speech_text)
+
 
 @ask.intent('CurrentSkillIntent')
 def current_skill():
     info_logger('********* IN CURRENT SKILL INTENT *************')
     speech_text = RESPONSE['CURRENT_SKILL']
-    return question(speech_text).reprompt(speech_text).simple_card('TRT QUIZ', speech_text)
+    return question(speech_text).reprompt(speech_text).simple_card('QUIZ', speech_text)
 
 
 @ask.intent('CategoryNameIntent')
 def select_category(category):
     try:
         info_logger('********* IN CATEGORY INTENT *************')
-        info_logger('category name: '+category)
-        
 
         if category.lower() not in CATEGORY.keys():
             speech_text = RESPONSE['INVALID_CATEGORY']
         else:
-            category_name = category
+
+            session.attributes['category_name'] = category
             session.attributes['category_selected'] = CATEGORY[category]
 
             info_logger('category_name var value: '+category_name)
+
+            speech_text = RESPONSE['GET_DIFFICULTY_LEVEL']
+
+    except Exception as e:
+        error_logger(e)
+        speech_text = RESPONSE['ERROR_MSG']
+    return question(speech_text).reprompt(speech_text).simple_card('Quiz', speech_text)
+
+
+@ask.intent('DifficultyLevelIntent')
+def select_difficulty(Difficulty):
+    try:
+        info_logger('********* IN DIFFICULTY LEVEL INTENT *************')
+
+        if Difficulty.lower() not in DIFFICULTY.keys():
+            speech_text = RESPONSE['INVALID_DIFFICULTY']
+        else:
+            session.attributes['difficulty'] = Difficulty
+            info_logger('difficulty selected '+ Difficulty)
 
             speech_text = RESPONSE['GET_PLAYER_COUNT']
 
@@ -53,6 +68,7 @@ def select_category(category):
         error_logger(e)
         speech_text = RESPONSE['ERROR_MSG']
     return question(speech_text).reprompt(speech_text).simple_card('Quiz', speech_text)
+
 
 
 @ask.intent('PlayerCountIntent')
@@ -107,7 +123,8 @@ def quiz_beginning(ready_or_not):
         info_logger('user is ready or not: '+ready_or_not)
         players = int(session.attributes['total_players'])
         category_selected = int(session.attributes['category_selected'])
-        quiz_data = middleware(players*5, category_selected)
+        difficulty_level = session.attributes['difficulty']
+        quiz_data = middleware(players*5, category_selected, difficulty_level)
         session.attributes['quiz_data'] = quiz_data
         session.attributes['counter'] = 0
         speech_text = quiz_instance.initial_quiz_que()

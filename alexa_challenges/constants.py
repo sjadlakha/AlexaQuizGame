@@ -25,3 +25,9 @@ SOUNDS = {
     "winning": "<audio src='soundbank://soundlibrary/human/amzn_sfx_crowd_applause_02'/>",
     "start_question": "<audio src='soundbank://soundlibrary/musical/amzn_sfx_bell_med_chime_02'/>"
 }
+
+DIFFICULTY = {
+    "easy": "easy",
+    "medium": "medium",
+    "hard": "hard"
+}

@@ -148,6 +148,21 @@
                         "I will go with {category}",
                         "{category}"
                     ]
+                },
+                {
+                    "name": "DifficultyLevelIntent",
+                    "slots": [
+                        {
+                            "name": "Difficulty",
+                            "type": "Difficulty"
+                        }
+                    ],
+                    "samples": [
+                        "I will go with {Difficulty}",
+                        "set difficulty level to {Difficulty}",
+                        "difficulty level {Difficulty}",
+                        "I will go with difficulty level {Difficulty}"
+                    ]
                 }
             ],
             "types": [
@@ -275,6 +290,26 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "Difficulty",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "hard"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medium"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "easy"
+                            }
+                        }
+                    ]
                 }
             ]
         },
@@ -295,21 +330,21 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "CategoryNameIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "category",
+                            "type": "category",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
                 }
-                // {
-                //     "name": "CategoryNameIntentent",
-                //     "confirmationRequired": false,
-                //     "prompts": {},
-                //     "slots": [
-                //         {
-                //             "name": "category",
-                //             "type": "category",
-                //             "confirmationRequired": false,
-                //             "elicitationRequired": false,
-                //             "prompts": {}
-                //         }
-                //     ]
-                // }
             ],
             "delegationStrategy": "ALWAYS"
         },

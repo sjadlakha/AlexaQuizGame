@@ -1,5 +1,3 @@
-''' Here define helper functions of skill. '''
-
 from responses import RESPONSE
 from logger import InfoLogger, ErrorLogger
 from constants import SOUNDS
@@ -134,11 +132,30 @@ class Quiz():
             speech_text = result_text + ' okay let\'s move on to the next question for '\
                 +players[str((self.attr['counter']+1) % self.attr['total_players'])]['name']+\
                 new_question
+            print(self.attr.category_name)
         else:
             winners_list, max_score = self.get_winner()
             winner = ' and '.join(winners_list)
-            response = RESPONSE['SINGLE_WIN_MSG'].format(name=winner, score=max_score) \
-                if len(winners_list) == 1 else RESPONSE['MULTI_WIN_MSG'].format(name=winner, score=max_score)
+            if len(winners_list) == 1 and max_score == 10:
+                response = RESPONSE['SINGLE_WIN_MSG1'].format(
+                    name=winner, score=max_score, category = self.attr.category_name)
+            elif len(winners_list) == 1 and max_score == 20:
+                response = RESPONSE['SINGLE_WIN_MSG2'].format(
+                    name=winner, score=max_score, category = self.attr.category_name)
+            elif len(winners_list) == 1 and max_score == 30:
+                response = RESPONSE['SINGLE_WIN_MSG3'].format(
+                    name=winner, score=max_score, category = self.attr.category_name)
+            elif len(winners_list) == 1 and max_score == 40:
+                response = RESPONSE['SINGLE_WIN_MSG4'].format(
+                    name=winner, score=max_score, category = self.attr.category_name)
+            elif len(winners_list) == 1 and max_score == 50:
+                response = RESPONSE['SINGLE_WIN_MSG5'].format(
+                    name=winner, score=max_score, category = self.attr.category_name)
+            else:
+                response = RESPONSE['MULTI_WIN_MSG'].format(
+                    name=winner, score=max_score, category = self.attr.category_name)
+            #response = RESPONSE['SINGLE_WIN_MSG'].format(name=winner, score=max_score) \
+                #if len(winners_list) == 1 else RESPONSE['MULTI_WIN_MSG'].format(name=winner, score=max_score)
             speech_text = self.response_with_music(SOUNDS['winning'], response)
             info_logger('$ Stage one Of quiz is over $')
         self.attr['counter'] += 1    
